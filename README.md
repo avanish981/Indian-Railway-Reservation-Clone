@@ -1,5 +1,5 @@
 # Railway reservation template
-a simple html and javascript based template
+ A simple html,javascript,css based template
 # features
 ## Login with username and Password
 ## Searching train from different routes
