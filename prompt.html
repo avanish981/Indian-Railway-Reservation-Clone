@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>prompt method</title>
+    <style>
+        .last-text{
+            color: black;
+        }
+        body{
+            margin: 0;
+            font-family: "Roboto";
+            overflow-y: auto;
+            height: 100%;
+
+        }
+        .bg-container{
+            background-color: aqua;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .outer-container{
+            margin: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+        }
+        .small-container{
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 300px;
+          
+        }
+        h1{
+            font-size: 15px;
+        }
+        input{
+            height: 20px;
+            align-self: center;
+        }
+        .input-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .button{
+            align-self: center;
+            background-color: green;
+            border-style: none;
+            border-radius: 10px;
+            height: 40px;
+            width: 100px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-container"  id="bigContainer">
+        <div class="outer-container">
+            <div class="small-container">
+                <h1>Enter your name: </h1>
+                <input type="text" id="inputElement"/>    
+            </div>
+            <div class="button-container">
+                <button class="button" id="button">
+                    Submit
+                </button> 
+            </div>
+        </div>
+    </div>
+    <script>
+        let button=document.getElementById("button");
+        let total=document.getElementById("bigContainer");
+        let text=document.getElementById("inputElement");
+        button.addEventListener("click",function(){
+            let name=text.value;
+            console.log(name);
+            let newDiv=document.createElement("div");
+            total.appendChild(newDiv);
+            newDiv.classList.add("outer-container");
+            let lastPara=document.createElement("p");
+            lastPara.classList.add("last-para");
+            lastPara.textContent=`Hi ${name} 😊, Thanks for visiting us❤`;
+            newDiv.appendChild(lastPara);
+            text.value="";
+
+        });
+
+    </script>
+</body>
+</html>
